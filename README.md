@@ -1,6 +1,6 @@
-1 cd task /n
-2 docker-compose build --no-cache
-3 docker-compose up -d
+(1) cd task 
+(2) docker-compose build --no-cache
+(3) docker-compose up -d
 
 On web-browser 
 localhost:85 //for webserver1
