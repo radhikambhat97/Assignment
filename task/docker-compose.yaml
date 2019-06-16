@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  
+  web_server1:
+    build: webserver
+    ports: 
+       - 85:80
+    volumes:
+      - ./docker/dockerails.conf:/usr/local/apache2/conf/httpd.conf
+
+  web_server2:
+    build: webserver1     
+    ports:
+       - 86:80
+    volumes:
+      - ./docker/dockerails.conf:/usr/local/apache2/conf/httpd.conf
+ 
+  nginx:
+    build: nginx
+    ports:
+       - 87:80
+    links:
+       - web_server1
+       - web_server2 
